@@ -14,6 +14,9 @@ Bots need to communicate with a central server, known as a Command and Control (
 
 This behavior is known as beaconing, and it can be configured to occur as frequently as every 10 seconds for rapid response, or as infrequently as once per day when stealth is a priority.
 
+![image](https://github.com/user-attachments/assets/704b762b-e916-4e1f-a113-dff67af4d3c1)
+
+
 #### Some T-SQL Code
 
 ```tsql
