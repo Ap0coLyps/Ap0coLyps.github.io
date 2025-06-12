@@ -6,7 +6,13 @@ Antivirus software on hosts can remove the malware when detected, but detection 
 
 ---
 
-### This is a header
+### How do bots stay hidden within network traffic?
+
+Just like botnets try to stay under the radar of antivirus software, bots also attempt to hide within normal network traffic to avoid detection. To catch them, it's crucial to understand how they remain hidden. 
+
+Bots need to communicate with a central server, known as a Command and Control (C2) server, to receive instructions on what actions to perform. To obtain these instructions, bots must establish some form of connection with the C2 server to check for commands. This communication needs to happen consistently to ensure timely execution.
+
+This behavior is known as beaconing, and it can be configured to occur as frequently as every 10 seconds for rapid response, or as infrequently as once per day when stealth is a priority.
 
 #### Some T-SQL Code
 
