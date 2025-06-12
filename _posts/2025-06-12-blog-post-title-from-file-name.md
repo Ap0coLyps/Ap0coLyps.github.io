@@ -11,10 +11,19 @@ Antivirus software on hosts can remove the malware when detected, but detection 
 Just like botnets try to stay under the radar of antivirus software, bots also attempt to hide within normal network traffic to avoid detection. To catch them, it's crucial to understand how they remain hidden. 
 
 Bots need to communicate with a central server, known as a Command and Control (C2) server, to receive instructions on what actions to perform. To obtain these instructions, bots must establish some form of connection with the C2 server to check for commands. This communication needs to happen consistently to ensure timely execution.
-
 This behavior is known as beaconing, and it can be configured to occur as frequently as every 10 seconds for rapid response, or as infrequently as once per day when stealth is a priority.
 
+Here is an example of beaconing detected using WireShark with a 10-second interval from my test setup, which uses HTTP for communication.
+
 ![image](https://github.com/user-attachments/assets/704b762b-e916-4e1f-a113-dff67af4d3c1)
+
+Jittering is a technique used by bots to make their communication patterns less predictable. Instead of connecting to the command and control (C2) server at fixed intervals (like exactly every 10 seconds), bots will add a random delay — for example, between 8 and 12 seconds.
+This randomness makes it harder to detect beaconing patterns, which often rely on spotting regular, repeating traffic.
+
+A bot will rarely communicate directly with its Command and Control (C2) server. It may use techniques like DNS or IP spoofing to make the traffic appear as if it's going somewhere else. Therefore, detecting a large amount of recurring traffic from a machine in a LAN to a C2 server is often not straightforward.
+
+
+
 
 
 #### Some T-SQL Code
