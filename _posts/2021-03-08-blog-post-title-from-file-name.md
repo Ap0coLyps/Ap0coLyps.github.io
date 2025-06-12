@@ -3,6 +3,7 @@
 A botnet is a network of compromised computers or devices — often referred to as "bots" or "zombies" that are remotely controlled by an attacker, usually without the device owners' knowledge. These bots are typically used for malicious purposes such as DDoS attacks, spam campaigns, data theft, or malware distribution.
 
 Antivirus software on hosts can remove the malware when detected, but detection is not always guaranteed. In this blog, I want to explore the possibility of detecting bots within a network by analyzing network traffic data.
+
 ---
 
 ### This is a header
