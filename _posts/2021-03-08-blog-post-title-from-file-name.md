@@ -1,11 +1,8 @@
-## Botnets fucky wucky
+## How botnets communicate and How to catch them.
 
-Due to a plugin called `jekyll-titles-from-headings` which is supported by GitHub Pages by default. The above header (in the markdown file) will be automatically used as the pages title.
+A botnet is a network of compromised computers or devices — often referred to as "bots" or "zombies" that are remotely controlled by an attacker, usually without the device owners' knowledge. These bots are typically used for malicious purposes such as DDoS attacks, spam campaigns, data theft, or malware distribution.
 
-If the file does not start with a header, then the post title will be derived from the filename.
-
-This is a sample blog post. You can talk about all sorts of fun things here.
-
+Antivirus software on hosts can remove the malware when detected, but detection is not always guaranteed. In this blog, I want to explore the possibility of detecting bots within a network by analyzing network traffic data.
 ---
 
 ### This is a header
