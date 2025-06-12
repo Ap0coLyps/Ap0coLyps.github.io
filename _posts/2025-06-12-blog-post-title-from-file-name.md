@@ -20,7 +20,11 @@ Here is an example of beaconing detected using WireShark with a 10-second interv
 Jittering is a technique used by bots to make their communication patterns less predictable. Instead of connecting to the command and control (C2) server at fixed intervals (like exactly every 10 seconds), bots will add a random delay — for example, between 8 and 12 seconds.
 This randomness makes it harder to detect beaconing patterns, which often rely on spotting regular, repeating traffic.
 
-A bot will rarely communicate directly with its Command and Control (C2) server. It may use techniques like DNS or IP spoofing to make the traffic appear as if it's going somewhere else. Therefore, detecting a large amount of recurring traffic from a machine in a LAN to a C2 server is often not straightforward.
+A bot will rarely communicate directly with its Command and Control server. It may use techniques like DNS or IP spoofing to make the traffic appear as if it's going somewhere else. Therefore, detecting a large amount of recurring traffic from a machine in a LAN to a C2 server is often not straightforward.
+
+---
+
+### So what can be detected?
 
 
 
