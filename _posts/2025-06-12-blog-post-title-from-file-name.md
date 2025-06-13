@@ -22,22 +22,31 @@ This randomness makes it harder to detect beaconing patterns, which often rely o
 
 A bot will rarely communicate directly with its Command and Control server. It may use techniques like DNS or IP spoofing to make the traffic appear as if it's going somewhere else. Therefore, detecting a large amount of recurring traffic from a machine in a LAN to a C2 server is often not straightforward.
 
+This IP spoofing can be observed when looking at the network traffic, so thats what i'm going to do.
+
 ---
 
-### So what can be detected?
+### Test setup
 
+The Botnet
+I deployed a test botnet using Covenant, a .NET-based Command and Control (C2) framework. Covenant allows you to generate payloads (bots) and provides a user-friendly interface for managing them. Since it is designed for testing purposes, it does not include antivirus evasion. Therefore, antivirus protection must be disabled on the target system for successful deployment.
 
+You can find the project on GitHub: https://github.com/cobbr/Covenant
 
+The Firewall:
+The firewall is going to be pfSense wich is an open-source firewall platform based on FreeBSD. It provides advanced network security features such as firewall rules, NAT, VPN support, traffic shaping, intrusion detection, and logging — all through an easy-to-use web interface. And it is free!
 
+Detection and visualisation:
+For this project, I’ll be using the Elastic Stack (formerly known as ELK Stack), which consists of Elasticsearch, Logstash, and Kibana.
 
-#### Some T-SQL Code
+    Elasticsearch is a powerful search and analytics engine that stores and indexes large volumes of data.
 
-```tsql
-SELECT This, [Is], A, Code, Block -- Using SSMS style syntax highlighting
-    , REVERSE('abc')
-FROM dbo.SomeTable s
-    CROSS JOIN dbo.OtherTable o;
-```
+    Logstash is used to collect, parse, and transform logs before sending them to Elasticsearch.
+
+    Kibana provides a visual interface to explore and analyze the data through dashboards and graphs.
+
+This stack is ideal for detecting patterns in network traffic and visualizing potential indicators of botnet activity.
+
 
 #### Some PowerShell Code
 
