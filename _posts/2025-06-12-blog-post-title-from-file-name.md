@@ -28,15 +28,15 @@ This IP spoofing can be observed when looking at the network traffic, so thats w
 
 ## Test setup
 
-### The Botnet:
+#### The Botnet:
 I deployed a test botnet using Covenant, a .NET-based Command and Control (C2) framework. Covenant allows you to generate payloads (bots) and provides a user-friendly interface for managing them. Since it is designed for testing purposes, it does not include antivirus evasion. Therefore, antivirus protection must be disabled on the target system for successful deployment.
 
 You can find the project on GitHub: https://github.com/cobbr/Covenant
 
-### The Firewall:
+#### The Firewall:
 The firewall is going to be pfSense wich is an open-source firewall platform based on FreeBSD. It provides advanced network security features such as firewall rules, NAT, VPN support, traffic shaping, intrusion detection, and logging — all through an easy-to-use web interface. And it is free!
 
-### Detection and visualisation:
+#### Detection and visualisation:
 For this project, I’ll be using the Elastic Stack (formerly known as ELK Stack), which consists of Elasticsearch, Logstash, and Kibana.
 
 - Elasticsearch is a powerful search and analytics engine that stores and indexes large volumes of data.
