@@ -56,7 +56,14 @@ Your complete setup should look something like this:
 
 # Detecting and alerting
 
-test
+I created a visualization in Kibana that displays all source and destination IP addresses of traffic passing through my firewall. Since the botnet is running in an isolated environment, the suspicious traffic is clearly noticeable.
+Here's what happens when I activate the botnet:
+
+sources:
+![image](https://github.com/user-attachments/assets/adbddb92-880f-4cf1-ab4d-9b4fd395f404)
+
+Destinations:
+![image](https://github.com/user-attachments/assets/6fddc7c2-355c-4247-a200-2d2618fa2e78)
 
 
 #### Some PowerShell Code
