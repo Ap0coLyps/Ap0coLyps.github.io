@@ -67,15 +67,18 @@ Destinations:
 
 ![image](https://github.com/user-attachments/assets/6fddc7c2-355c-4247-a200-2d2618fa2e78)
 
+While this traffic is easy to spot in an isolated environment, it can easily go unnoticed in a live production environment when relying solely on visual graphs. That’s why an automated detection and alerting system is essential. After exploring the options provided by Elastic, the most effective approach is using a threshold rule — a rule that triggers an alert when a specific event occurs more than a defined number of times within a given time period. This can also be applied to a number of unique values.
 
-#### Some PowerShell Code
+For example:
 
-```powershell
-Write-Host "This is a powershell Code block";
+![image](https://github.com/user-attachments/assets/337399bf-1113-49fe-9588-86d9349a021e)
 
-# There are many other languages you can use, but the style has to be loaded first
+An alert will be triggerd when a single source makes connections to at least 30 different IP's within 5 minutes.
 
-ForEach ($thing in $things) {
-    Write-Output "It highlights it using the GitHub style"
-}
-```
+---
+
+# Conclusion
+
+We've seen that it is technically possible to automate alerts for botnet-related traffic. However, this approach is not immune to false positives, and once an alert is triggered, a security specialist still needs to perform forensic analysis to determine exactly what is happening.
+
+
