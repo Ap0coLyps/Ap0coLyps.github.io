@@ -1,4 +1,4 @@
-## How botnets communicate and How to catch them.
+# How botnets communicate and How to catch them.
 
 A botnet is a network of compromised computers or devices — often referred to as "bots" or "zombies" that are remotely controlled by an attacker, usually without the device owners' knowledge. These bots are typically used for malicious purposes such as DDoS attacks, spam campaigns, data theft, or malware distribution.
 
@@ -6,7 +6,7 @@ Antivirus software on hosts can remove the malware when detected, but detection 
 
 ---
 
-### How do bots stay hidden within network traffic?
+## How do bots stay hidden within network traffic?
 
 Just like botnets try to stay under the radar of antivirus software, bots also attempt to hide within normal network traffic to avoid detection. To catch them, it's crucial to understand how they remain hidden. 
 
@@ -26,17 +26,17 @@ This IP spoofing can be observed when looking at the network traffic, so thats w
 
 ---
 
-### Test setup
+## Test setup
 
-# The Botnet:
+### The Botnet:
 I deployed a test botnet using Covenant, a .NET-based Command and Control (C2) framework. Covenant allows you to generate payloads (bots) and provides a user-friendly interface for managing them. Since it is designed for testing purposes, it does not include antivirus evasion. Therefore, antivirus protection must be disabled on the target system for successful deployment.
 
 You can find the project on GitHub: https://github.com/cobbr/Covenant
 
-# The Firewall:
+### The Firewall:
 The firewall is going to be pfSense wich is an open-source firewall platform based on FreeBSD. It provides advanced network security features such as firewall rules, NAT, VPN support, traffic shaping, intrusion detection, and logging — all through an easy-to-use web interface. And it is free!
 
-# Detection and visualisation:
+### Detection and visualisation:
 For this project, I’ll be using the Elastic Stack (formerly known as ELK Stack), which consists of Elasticsearch, Logstash, and Kibana.
 
 - Elasticsearch is a powerful search and analytics engine that stores and indexes large volumes of data.
@@ -44,8 +44,20 @@ For this project, I’ll be using the Elastic Stack (formerly known as ELK Stack
 - Kibana provides a visual interface to explore and analyze the data through dashboards and graphs.
 
 This stack is ideal for detecting patterns in network traffic and visualizing potential indicators of botnet activity.
-To collect network data correctly from pfSense and send it to the Elastic Stack, a few configurations are necessary. By default, pfSense only logs blocked traffic, so you’ll need to manually enable logging for allowed traffic as well.
-To do this, edit your firewall rules and enable the “Log packets that are handled by this rule” option for all rules that allow traffic.
+To collect network data correctly from pfSense and send it to the Elastic Stack, a few configurations are necessary. By default, pfSense only logs blocked traffic, so you’ll need to manually enable logging for allowed traffic as well. To do this, edit your firewall rules and enable the “Log packets that are handled by this rule” option for all rules that allow traffic. Next, you need to enable remote logging in pfSense and configure it to send logs to the IP address of your Elastic Stack machine, using the port that Logstash will be listening on.
+
+Finally, you can set up the Elastic Stack. I did this by following the instructions from pfelk on GitHub, which provides a step-by-step guide for properly parsing pfSense logs within the Elastic Stack.
+The guide covers all the necessary configuration steps, including Logstash pipelines, index templates, and dashboards.
+Your complete setup should look something like this:
+
+![image](https://github.com/user-attachments/assets/fdb5c273-3a68-4bef-9a2e-08441a3358b7)
+
+---
+
+# Detecting and alerting
+
+test
+
 
 #### Some PowerShell Code
 
